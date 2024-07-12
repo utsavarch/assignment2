@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+    <style>
+      body {
+        margin-top: -5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #000000;
+        color: white;
+      }
+      header {
+        display: flex;
+        flex-direction: row;
+      }
+      .site_logo {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+      }
+      .cta {
+        display: flex;
+        flex-direction: row;
+        width: 20%;
+        column-gap: 20px;
+      }
+      button {
+        font-size: 18px;
+        color: #fca311;
+        font-family: inherit;
+        font-weight: 800;
+        cursor: pointer;
+        position: relative;
+        border: none;
+        background: none;
+        text-transform: uppercase;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-duration: 400ms;
+        transition-property: color;
+        margin-top: 25px;
+      }
+
+      button:focus,
+      button:hover {
+        color: #e5e5e5;
+      }
+
+      button:focus:after,
+      button:hover:after {
+        width: 100%;
+        left: 0%;
+      }
+
+      button:after {
+        content: "";
+        pointer-events: none;
+        bottom: -2px;
+        left: 50%;
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background-color: #e5e5e5;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-duration: 400ms;
+        transition-property: width, left;
+      }
+      a {
+        text-decoration: none;
+      }
+      #photo {
+        margin-top: 10px;
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
+        object-fit: cover;
+        filter: grayscale(1);
+      }
+      #photo:hover {
+        filter: grayscale(0);
+        transition: filter ease-in-out 0.5s;
+      }
+      #projects,
+      #skills {
+        display: flex;
+        flex-direction: row;
+        column-gap: 25px;
+        padding-bottom: 20px;
+      }
+      .plist {
+        display: flex;
+        flex-direction: column;
+        width: 33.33%;
+        color: #e5e5e5;
+        border: #fca311 solid 1px;
+        border-radius: 25px;
+        object-fit: cover;
+      }
+      .plist:hover {
+        transform: scale(1.1);
+        transition: transform ease-in-out 0.7s;
+      }
+      .slist {
+        display: flex;
+        flex-direction: column;
+        width: 33.33%;
+        height: 50px;
+        color: #e5e5e5;
+        border: #fca311 solid 1px;
+        border-radius: 25px;
+        padding: 50px;
+        text-align: center;
+      }
+      .slist:hover {
+        color: #000000;
+        background-color: #e5e5e5;
+        transition: background-color ease-in-out 0.6s;
+        transition: color ease-in-out 0.6s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="site_logo">
+        <a href="/index.html"
+          ><h3 style="font-family: cursive; color: #fca311">
+            Utsav Acharya Sharma
+          </h3>
+        </a>
+      </div>
+      <div class="cta">
+        <a href="https://www.google.com" target="_blank"
+          ><button>Google</button></a
+        >
+        <a href="/contact.html"><button>Contact</button></a>
+      </div>
+    </header>
+    <hr style="border-color: #fca311" />
+    <div style="height: 400px">
+      <center>
+        <img src="./src/image/_MG_0190.jpg" alt="Utsav" id="photo" />
+      </center>
+    </div>
+    <div style="margin-top: 5px">
+      <center>
+        <a href="https://www.utsavacharyasharma.com.np" target="_blank"
+          ><button>About</button></a
+        >
+        <a href="#" onclick="scrollToProjects();"><button>Projects</button></a>
+        <a href="#" onclick="scrollToSkills();"><button>Skills</button></a>
+      </center>
+    </div>
+    <br /><br />
+    <hr style="border-color: #fca311" />
+    <h1 style="color: #fca311">Projects</h1>
+    <div id="projects">
+      <div class="plist">
+        <a href="https://jbautomotive.com.np/" target="_blank"
+          ><img
+            src="./src/image/jb.png"
+            alt="bautomotive.com.np"
+            style="border-radius: 26px"
+            width="100%"
+            height="100%"
+        /></a>
+      </div>
+      <div class="plist">
+        <a href="https://skillshikshya.com/" target="_blank"
+          ><img
+            src="./src/image/skillshikshya.png"
+            alt="skillshikshya"
+            style="border-radius: 26px"
+            width="100%"
+            height="100%"
+        /></a>
+      </div>
+      <div class="plist">
+        <a href="https://swargadwaribeeconcern.com/" target="_blank"
+          ><img
+            src="./src/image/swargadwari.png"
+            alt="swargadwaribeeconcern"
+            style="border-radius: 26px"
+            width="100%"
+            height="100%"
+        /></a>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: row">
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          width: 33.33%;
+          align-items: center;
+        "
+      >
+        <h2>JB Automotive</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          width: 33.33%;
+          align-items: center;
+        "
+      >
+        <h2>Skill Shikshya</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          width: 33.33%;
+          align-items: center;
+        "
+      >
+        <h2>Swargadwari Honey</h2>
+      </div>
+    </div>
+    <hr style="border-color: #fca311" />
+    <h1 style="color: #fca311">Skills</h1>
+    <div id="skills">
+      <div class="slist"><h4>HTML</h4></div>
+      <div class="slist"><h4>CSS</h4></div>
+      <div class="slist"><h4>JS</h4></div>
+      <div class="slist"><h4>PHP</h4></div>
+      <div class="slist"><h4>WordPress</h4></div>
+      <div class="slist"><h4>UI/UX</h4></div>
+    </div>
+    <hr style="border-color: #fca311" />
+    <h1 style="color: #fca311">Videos</h1>
+
+    <div style="display: flex; flex-direction: row; gap: 20px">
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          align-items: center;
+        "
+      >
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/56mjvrJWyE4?si=tkZQ6MWgWHS-6l6q&autoplay=1&mute=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div style="display: flex; flex-direction: column; width: 50%">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/fWxQwUqIP50?si=vEywHzKlAAiUxa4G&autoplay=1&mute=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <hr style="border-color: #fca311" />
+    <div>
+      <h1 style="color: #fca311">My Fav Audio</h1>
+
+      <audio
+        src="https://www.w3schools.com/html/horse.ogg"
+        controls
+        muted
+      ></audio>
+    </div>
+    <hr style="border-color: #fca311" />
+
+    <iframe
+      src="./contact.html"
+      title="Website Page Title"
+      width="750px"
+      height="750px"
+    ></iframe>
+
+    <hr style="border-color: #fca311" />
+    <center>
+      <a href="tel:9861349791"><button>Call Now!</button></a>
+      <a href="https://wa.me/9861349791"><button>Whatsapp</button></a>
+    </center>
+    <script>
+      function scrollToProjects() {
+        const projectsSection = document.getElementById("projects");
+        projectsSection.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+      function scrollToSkills() {
+        const skillsSection = document.getElementById("skills");
+        skillsSection.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>

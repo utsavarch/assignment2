@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+    <style>
+      body {
+        margin-top: -5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #000000;
+      }
+      header {
+        display: flex;
+        flex-direction: row;
+      }
+      .site_logo {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+      }
+      .cta {
+        display: flex;
+        flex-direction: row;
+        width: 20%;
+        column-gap: 20px;
+      }
+      button {
+        font-size: 18px;
+        color: #fca311;
+        font-family: inherit;
+        font-weight: 800;
+        cursor: pointer;
+        position: relative;
+        border: none;
+        background: none;
+        text-transform: uppercase;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-duration: 400ms;
+        transition-property: color;
+        margin-top: 25px;
+      }
+
+      button:focus,
+      button:hover {
+        color: #e5e5e5;
+      }
+
+      button:focus:after,
+      button:hover:after {
+        width: 100%;
+        left: 0%;
+      }
+
+      button:after {
+        content: "";
+        pointer-events: none;
+        bottom: -2px;
+        left: 50%;
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background-color: #e5e5e5;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-duration: 400ms;
+        transition-property: width, left;
+      }
+      a {
+        text-decoration: none;
+      }
+      form {
+        padding-top: 50px;
+        padding-left: 250px;
+        padding-bottom: 50px;
+        display: flex;
+        width: 50%;
+        color: #fca311;
+      }
+      #submitMessage {
+        display: none;
+      }
+      #photo {
+        margin-top: 10px;
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
+        object-fit: cover;
+        filter: grayscale(1);
+      }
+      #photo:hover {
+        filter: grayscale(0);
+        transition: filter ease-in-out 0.5s;
+      }
+      #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="site_logo">
+        <a href="/index.html"
+          ><h3 style="font-family: cursive; color: #fca311">
+            Utsav Acharya Sharma
+          </h3>
+        </a>
+      </div>
+      <div class="cta">
+        <a href="https://www.google.com" target="_blank"
+          ><button>Google</button></a
+        >
+        <a href="/index.html"><button>Home</button></a>
+      </div>
+    </header>
+    <hr style="border-color: #fca311" />
+    <div>
+      <center>
+        <img src="./src/image/_MG_0190.jpg" alt="Utsav" id="photo" />
+      </center>
+    </div>
+    <hr style="border-color: #fca311" />
+
+    <div class="form">
+      <form
+        id="form"
+        style="display: flex; flex-direction: column; row-gap: 20px"
+        onsubmit="onsubmitpress(event)"
+      >
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="date">Date of Birth:</label>
+        <input type="date" id="date" name="date" />
+
+        <label for="age">Age:<span id="ageValue">50</span></label>
+        <input type="range" min="1" max="100" id="age" />
+
+        <label for="color">Favorite Color:</label>
+        <input type="color" id="color" name="color" />
+
+        <fieldset>
+          <legend>Gender:</legend>
+          <label for="male">
+            <input type="radio" id="male" value="male" /> Male
+          </label>
+          <label for="female">
+            <input type="radio" id="female" value="female" />
+            Female
+          </label>
+          <label for="other">
+            <input type="radio" id="other" value="other" />
+            Other
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Interests:</legend>
+          <label> <input type="checkbox" value="html" /> HTML </label>
+          <label> <input type="checkbox" value="css" /> CSS </label>
+          <label> <input type="checkbox" value="js" /> JavaScript </label>
+          <label> <input type="checkbox" value="php" /> PHP </label>
+        </fieldset>
+        <div>
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+      <div id="submitMessage" style="color: #fca311">
+        Thank you for submitting!
+      </div>
+    </div>
+    <script>
+      function onsubmitpress(event) {
+        event.preventDefault();
+        document.getElementById("form").style.display = "none";
+        document.getElementById("submitMessage").style.display = "block";
+      }
+      document.getElementById("age").addEventListener("input", function () {
+        document.getElementById("ageValue").textContent = this.value;
+      });
+    </script>
+  </body>
+</html>
